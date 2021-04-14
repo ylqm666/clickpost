@@ -49,6 +49,9 @@ def batch_applocate():
     time.sleep(1)
     driver.find_element_by_name('commit').click()
     time.sleep(1)
+    if driver.find_element_by_id('multi_error_message'):
+        print('テンプレートが不正です')
+        exit()
     driver.find_element_by_name('create').click()
 
 
