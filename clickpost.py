@@ -20,9 +20,10 @@ password = args.password
 cvv = args.cvv
 template_path = args.template_path
 
+LOGIN_URL = 'https://clickpost.jp/yahoo_logins/authorizing'
 
 def login(username, password):
-    driver.get('https://clickpost.jp/auth/yconnect')
+    driver.get(LOGIN_URL)
     driver.find_element_by_id('username').send_keys(username)
     driver.find_element_by_id("btnNext").click()
     # ヤフーのログイン画面はIDを入力した後にJSのイベントが走るので、念の為2秒"待ち"
